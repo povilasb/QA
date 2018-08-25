@@ -1,5 +1,3 @@
-// TODO try to replace with digitalocean.node package from npm
-
 var Api = function(token, testMode) {
   var Vultr = require('vultr');
   var vultr = new Vultr(token);
@@ -8,7 +6,7 @@ var Api = function(token, testMode) {
     throw new Error('Test mode is not supported for Vultr integration');
   }
 
-  this.getAvaliableRegions = function(callback) {
+  this.getAvailableRegions = function(callback) {
     vultr.regions.list().then(function(list) {
       // TODO display and then grep
       var regList = [];

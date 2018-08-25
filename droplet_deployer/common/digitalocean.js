@@ -22,7 +22,7 @@ var Api = function(token, testMode) {
     return regions;
   };
 
-  this.getAvaliableRegions = function(size, callback) {
+  this.getAvailableRegions = function(size, callback) {
     client.get('v2/sizes', function(err, response, body) {
       if (err || response.statusCode !== 200) {
         callback('Failed to fetch regions list');
