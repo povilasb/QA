@@ -546,7 +546,7 @@ exports = module.exports = function(args) {
    *    config.
    */
   function genCrustConf(config, hardCodedContacts) {
-    let conf = JSON.parse(fs.readFileSync('./std_config_template.json', 'utf8'));
+    let conf = JSON.parse(fs.readFileSync('../template/std_config.json', 'utf8'));
     let listenerPort = listeningPort | config.listeningPort;
     conf.listen_addresses = conf.listen_addresses.map(addr => addr + listenerPort);
     conf.output_encryption_keys = config.crustEncryptionKeysFile;
@@ -586,7 +586,7 @@ exports = module.exports = function(args) {
 
   var generateVaultConfigFile = function(callback) {
     var configFile;
-    configFile = require('./vault_config_template.json');
+    configFile = require('../template/vault_config.json');
     if (inviteKey) {
       configFile.invite_key = inviteKey;
     }
@@ -596,7 +596,7 @@ exports = module.exports = function(args) {
 
   var generateReporterConfigFiles = function(callback) {
     var configFile;
-    configFile = require('./reporter_config_template.json');
+    configFile = require('../template/reporter_config.json');
 
     for (var i in createdDroplets) {
       if (createdDroplets[i]) {
@@ -618,7 +618,7 @@ exports = module.exports = function(args) {
     if (!libraryConfig.hasOwnProperty(TMUX_CMD_KEY)) {
       return callback('Missing tmuxCommand in config.json');
     }
-    var buff = fs.readFileSync('./teamocil_template.yml');
+    var buff = fs.readFileSync('../template/teamocil.yml');
     var generatedFile = buff.toString();
     generatedFile = generatedFile.replace('%TMUX_CMD%', libraryConfig[TMUX_CMD_KEY]);
     if (binaryName === 'reporter') {
@@ -635,7 +635,7 @@ exports = module.exports = function(args) {
   };
 
   var generateLogFile = function(callback) {
-    fse.copySync('./log_template.toml', config.outFolder + '/scp/log.toml');
+    fse.copySync('../template/log.toml', config.outFolder + '/scp/log.toml');
     callback(null);
   };
 
