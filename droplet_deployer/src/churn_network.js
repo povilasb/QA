@@ -2,7 +2,7 @@ exports = module.exports = function() {
   var async = require('async');
   var utils = require('./common/utils');
   var nodeUtil = require('util');
-  var config = require('./config.json');
+  var config = require('../config.json');
   var auth = require('./common/auth');
   var SshClient = require('ssh2').Client;
   var cloudProvider =  config.provider === 'vultr' ?

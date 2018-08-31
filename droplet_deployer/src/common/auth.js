@@ -8,7 +8,7 @@
 var AuthManager = function() {
   var async = require('async');
   var exec = require('child_process').exec;
-  var config = require('../config.json');
+  var config = require('../../config.json');
   var CLONED_REPO_NAME = 'assets_repo';
   var TOKEN_KEY = 'digitalOceanToken';
   var PASSWORD_KEY = 'dropletUserPassword';

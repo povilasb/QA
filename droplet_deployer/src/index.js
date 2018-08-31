@@ -3,7 +3,7 @@ var churnNetwork = require('./churn_network');
 var dropNetwork = require('./drop_network');
 var utils = require('./common/utils');
 var auth = require('./common/auth');
-var config = require('./config');
+var config = require('../config');
 var showMainMenu;
 
 /**

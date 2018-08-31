@@ -1,5 +1,5 @@
 exports = module.exports = function() {
-  var config = require('./config.json');
+  var config = require('../config.json');
   var utils = require('./common/utils');
   var auth = require('./common/auth');
   var nodeUtil = require('util');

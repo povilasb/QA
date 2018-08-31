@@ -11,7 +11,7 @@ exports = module.exports = function(args) {
   var exec = require('child_process').exec;
   var utils = require('./common/utils');
   var nodeUtil = require('util');
-  var config = require('./config.json');
+  var config = require('../config.json');
   var auth = require('./common/auth');
   var SshClient = require('ssh2').Client;
   var ProgressBar = require('progress');
